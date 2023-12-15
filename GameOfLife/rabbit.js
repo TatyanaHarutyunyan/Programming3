@@ -65,7 +65,7 @@ module.exports = class Rabbit extends LivingCreature{
     }
     eat(){
         let foods = this.chooseCell(1,2,3,4)
-        let food = random(foods)
+        let food = foods[Math.floor(Math.random()* foods.length)]
         if(food){
             this.energy += 5
             let newX = food[0]
@@ -107,7 +107,7 @@ module.exports = class Rabbit extends LivingCreature{
     }
     move(){
         let emptyCells = this.chooseCell(0)
-        let newCell = random(emptyCells)
+        let newCell = foods[Math.floor(Math.random()* foods.length)]
     
         if(newCell){
             this.energy--
