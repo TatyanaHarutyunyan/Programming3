@@ -93,3 +93,4 @@ let Rabbit = require("./rabbit")
 //////
 
 
+console.log("delete");
