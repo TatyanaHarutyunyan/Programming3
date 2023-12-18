@@ -147,7 +147,41 @@ function game(){
 
 setInterval(game , 500)
 
-///////
-io.on("connection", function(){
+// Add buttons
+function AddGrass(){
+    for (let i = 0;  i < 7 ; i++){
+        let x = Math.floor(Math.random() * matrix.length)
+        let y = Math.floor(Math.random() * matrix.length)
+        if(matrix[y][x] == 0){
+            matrix [y][x] == 1
+            let grass = new Grass(x,y)
+            grassArr.push(grass)
+
+        }
+        
+    }
+    io.sockets.emit("send matrix", matrix)
+}
+
+///////statistics
+var statistics = {
+    
+}
+setInterval(function(){
+
+    statistics.grass = grassArr.length
+    statistics.grassEater = grassEaterArr.length
+    statistics.predator = predatorArr.length  
+    statistics.rabbit = rabbitArr.length
+    statistics.frog = frogArr.length
+
+    fs.writeFile("statistics.json", JSON.stringify(statistics), function(err){
+            console.log("game of life statistics");
+    })
+},1000)
+
+
+io.on("connection", function(socket){
     createObject(matrix)
+    socket.on("addGrass", AddGrass)
 })

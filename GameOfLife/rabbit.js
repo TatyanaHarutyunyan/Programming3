@@ -107,7 +107,7 @@ module.exports = class Rabbit extends LivingCreature{
     }
     move(){
         let emptyCells = this.chooseCell(0)
-        let newCell = foods[Math.floor(Math.random()* foods.length)]
+        let newCell = emptyCells[Math.floor(Math.random()* emptyCells.length)]
     
         if(newCell){
             this.energy--
