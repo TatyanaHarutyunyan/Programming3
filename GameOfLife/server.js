@@ -162,6 +162,63 @@ function AddGrass(){
     }
     io.sockets.emit("send matrix", matrix)
 }
+function AddGrassEater(){
+    for (let i = 0;  i < 7 ; i++){
+        let x = Math.floor(Math.random() * matrix.length)
+        let y = Math.floor(Math.random() * matrix.length)
+        if(matrix[y][x] == 0){
+            matrix [y][x] == 1
+            let grassEater = new GrassEater(x,y)
+            grassEaterArr.push(grassEater)
+
+        }
+        
+    }
+    io.sockets.emit("send matrix", matrix)
+}
+function AddPredator(){
+    for (let i = 0;  i < 7 ; i++){
+        let x = Math.floor(Math.random() * matrix.length)
+        let y = Math.floor(Math.random() * matrix.length)
+        if(matrix[y][x] == 0){
+            matrix [y][x] == 1
+            let predator = new Predator(x,y)
+            predatorArr.push(predator)
+
+        }
+        
+    }
+    io.sockets.emit("send matrix", matrix)
+}
+function AddRabbit(){
+    for (let i = 0;  i < 7 ; i++){
+        let x = Math.floor(Math.random() * matrix.length)
+        let y = Math.floor(Math.random() * matrix.length)
+        if(matrix[y][x] == 0){
+            matrix [y][x] == 1
+            let rabbit = new Rabbit(x,y)
+            rabbitArr.push(rabbit)
+
+        }
+        
+    }
+    io.sockets.emit("send matrix", matrix)
+}
+function AddFrog(){
+    for (let i = 0;  i < 7 ; i++){
+        let x = Math.floor(Math.random() * matrix.length)
+        let y = Math.floor(Math.random() * matrix.length)
+        if(matrix[y][x] == 0){
+            matrix [y][x] == 1
+            let frog = new Frog(x,y)
+            frogArr.push(frog)
+
+        }
+        
+    }
+    io.sockets.emit("send matrix", matrix)
+}
+
 
 ///////statistics
 var statistics = {
@@ -184,4 +241,20 @@ setInterval(function(){
 io.on("connection", function(socket){
     createObject(matrix)
     socket.on("addGrass", AddGrass)
+})
+io.on("connection", function(socket){
+    createObject(matrix)
+    socket.on("addGrassEater", AddGrassEater)
+})
+io.on("connection", function(socket){
+    createObject(matrix)
+    socket.on("addPredator", AddPredator)
+})
+io.on("connection", function(socket){
+    createObject(matrix)
+    socket.on("addRabbit", AddRabbit)
+})
+io.on("connection", function(socket){
+    createObject(matrix)
+    socket.on("addFrog", AddFrog)
 })
