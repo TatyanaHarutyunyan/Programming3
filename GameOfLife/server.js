@@ -241,20 +241,9 @@ setInterval(function(){
 io.on("connection", function(socket){
     createObject(matrix)
     socket.on("addGrass", AddGrass)
-})
-io.on("connection", function(socket){
-    createObject(matrix)
     socket.on("addGrassEater", AddGrassEater)
-})
-io.on("connection", function(socket){
-    createObject(matrix)
     socket.on("addPredator", AddPredator)
-})
-io.on("connection", function(socket){
-    createObject(matrix)
     socket.on("addRabbit", AddRabbit)
-})
-io.on("connection", function(socket){
-    createObject(matrix)
     socket.on("addFrog", AddFrog)
 })
+
