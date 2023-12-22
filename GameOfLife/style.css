@@ -1,5 +1,7 @@
 canvas{
     margin-left: 30%;
+    margin-top: -10%;
+    position: absolute;
 }
 body {
     background-color: lightblue;

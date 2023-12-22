@@ -72,7 +72,7 @@ function matrixGenerator(matrixSize, grassCount, grassEaterCount,predatorCount, 
     
 }
 
- matrix = matrixGenerator(40,35,20,15,10,12)
+ matrix = matrixGenerator(25,35,20,15,10,12)
 
 io.sockets.emit("send matrix",matrix)
 
@@ -145,7 +145,29 @@ function game(){
     io.sockets.emit("send matrix",matrix)
 }
 
-setInterval(game , 500)
+setInterval(game , 300)
+
+var weath;
+
+function Winter() {
+    weath = "winter";
+    io.sockets.emit("Winter", weath);
+}
+
+function Summer() {
+    weath = "summer";
+    io.sockets.emit("Summer", weath);
+}
+
+function Spring() {
+    weath = "spring";
+    io.sockets.emit("Spring", weath);
+}
+function Autumn() {
+    weath = "autumn";
+    io.sockets.emit("Autumn", weath);
+}
+
 
 // Add buttons
 function AddGrass(){
@@ -240,6 +262,10 @@ setInterval(function(){
 
 io.on("connection", function(socket){
     createObject(matrix)
+    socket.on("spring", Spring);
+    socket.on("summer", Summer);
+    socket.on("autumn", Autumn);
+    socket.on("winter", Winter);
     socket.on("addGrass", AddGrass)
     socket.on("addGrassEater", AddGrassEater)
     socket.on("addPredator", AddPredator)

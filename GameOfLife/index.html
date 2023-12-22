@@ -5,11 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <title>Background image</title>
-    <style type="text/css">
-    div{
-        background-image: url("amp.jpg");
-    }
+   
     </style>
     <script src="socket.io/socket.io.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js"></script>
@@ -21,11 +17,16 @@
 
     <button class="button-3" role="button" onclick="AddGrass()">Add Grass</button><br>
     <button class="button-3" style="background-color: yellow; color: black;" role="button" onclick="AddGrassEater() ">Add GrassEater</button><br>
-    <button class="button-3" style="background-color: red; color: black;" role="button" onclick="AddPredator() ">Add Predator</button><br>
-    <button class="button-3" style="background-color: blue; color: black;" role="button" onclick="AddRabbit() ">Add Rabbit</button><br>
-    <button class="button-3" style="background-color: #4D288F; color: black;" role="button" onclick="AddFrog() ">Add Frog</button><br>
+    <button class="button-3" style="background-color: red; color: rgb(253, 253, 253);" role="button" onclick="AddPredator() ">Add Predator</button><br>
+    <button class="button-3" style="background-color: blue; color: white;" role="button" onclick="AddRabbit() ">Add Rabbit</button><br>
+    <button class="button-3" style="background-color: #4D288F; color: rgb(253, 253, 253);" role="button" onclick="AddFrog() ">Add Frog</button><br><br><br>
 
-    
+    <div class="weather_btns">
+        <button class="button-3" onclick="Spring()" class="btn_weather" style="background-color: rgb(48, 129, 24)">Spring</button>
+        <button class="button-3" onclick="Summer()" class="btn_weather" style="background-color: #d41f19">Summer</button><br>
+        <button class="button-3" onclick="Autumn()" class="btn_weather" style="background-color: #ff8453">Autumn</button>
+        <button class="button-3" onclick="Winter()" class="btn_weather" style="background-color: #ffffff; color: black;">Winter</button><br>
+    </div>
 
 </body>
 </html>
