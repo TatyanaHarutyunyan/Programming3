@@ -10,16 +10,17 @@
     <script src="socket.io/socket.io.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js"></script>
     <script src="script.js"></script>
+
     <link rel="stylesheet" href="style.css">
     <h1>GameOfLife</h1>
 </head>
 <body>
-
     <button class="button-3" role="button" onclick="AddGrass()">Add Grass</button><br>
     <button class="button-3" style="background-color: yellow; color: black;" role="button" onclick="AddGrassEater() ">Add GrassEater</button><br>
     <button class="button-3" style="background-color: red; color: rgb(253, 253, 253);" role="button" onclick="AddPredator() ">Add Predator</button><br>
     <button class="button-3" style="background-color: blue; color: white;" role="button" onclick="AddRabbit() ">Add Rabbit</button><br>
-    <button class="button-3" style="background-color: #4D288F; color: rgb(253, 253, 253);" role="button" onclick="AddFrog() ">Add Frog</button><br><br><br>
+    <button class="button-3" style="background-color: #4D288F; color: rgb(253, 253, 253);" role="button" onclick="AddFrog() ">Add Frog</button><br>
+    <button class="button-3" style="background-color: black; color: rgb(253, 253, 253);" role="button" onclick="KillAll() ">KillAll</button><br><br><br><br>
 
     <div class="weather_btns">
         <button class="button-3" onclick="Spring()" class="btn_weather" style="background-color: rgb(48, 129, 24)">Spring</button>
@@ -27,6 +28,8 @@
         <button class="button-3" onclick="Autumn()" class="btn_weather" style="background-color: #ff8453">Autumn</button>
         <button class="button-3" onclick="Winter()" class="btn_weather" style="background-color: #ffffff; color: black;">Winter</button><br>
     </div>
+
+   
 
 </body>
 </html>
